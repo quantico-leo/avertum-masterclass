@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title>Avertum Group - Executive Masterclass</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap');
+
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #030a10;
+    }
+
+    .av-generic-container {
+        background-color: #030a10; 
+        background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        background-size: 50px 50px; 
+        color: #e0e0e0;
+        font-family: 'Montserrat', sans-serif;
+        padding: 80px 20px;
+        line-height: 1.6;
+        box-sizing: border-box;
+        min-height: 100vh; 
+    }
+
+    .av-generic-inner {
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+    /* PREMIUM LOGO STYLING */
+    .av-logo-center {
+        text-align: center;
+        margin-bottom: 50px;
+        margin-top: 20px;
+    }
+    
+    .av-logo-img {
+        width: 150px; 
+        height: 150px; 
+        object-fit: cover; 
+        border-radius: 50%; 
+        border: 2px solid rgba(197, 160, 89, 0.6); 
+        box-shadow: 0 0 25px rgba(197, 160, 89, 0.5),
+                    0 0 50px rgba(197, 160, 89, 0.2);
+        transition: all 0.5s ease;
+    }
+
+    .av-logo-img:hover {
+        transform: scale(1.05); 
+        border-color: rgba(197, 160, 89, 1); 
+        box-shadow: 0 0 35px rgba(197, 160, 89, 0.7),
+                    0 0 70px rgba(197, 160, 89, 0.3); 
+    }
+
+    /* TYPOGRAFI */
+    .av-title-gold {
+        color: #C5A059; 
+        font-family: 'Playfair Display', serif;
+        font-size: 14px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+        display: block;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    .av-headline {
+        font-family: 'Playfair Display', serif;
+        font-size: 3.5rem;
+        color: #ffffff;
+        margin-top: 0;
+        margin-bottom: 30px;
+        line-height: 1.1;
+        text-align: center;
+    }
+
+    .av-headline span {
+        color: #C5A059; 
+        font-style: italic;
+    }
+
+    .av-intro-text {
+        font-size: 1.1rem;
+        max-width: 800px;
+        margin: 0 auto 70px auto;
+        color: #cccccc;
+        text-align: center;
+        line-height: 1.8;
+    }
+
+    /* GRID FÖR ARGUMENTEN */
+    .av-services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 40px;
+        margin-bottom: 80px;
+    }
+
+    .av-card {
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(197, 160, 89, 0.15);
+        padding: 35px 30px;
+        transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+    }
+
+    .av-card:hover {
+        transform: translateY(-7px);
+        border-color: #C5A059;
+        background: rgba(197, 160, 89, 0.05);
+    }
+
+    .av-card h3 {
+        color: #ffffff;
+        font-family: 'Playfair Display', serif;
+        font-size: 1.5rem;
+        margin-top: 0;
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid rgba(197, 160, 89, 0.5);
+        display: inline-block;
+    }
+
+    .av-card p {
+        font-size: 1rem;
+        color: #b0b0b0;
+        line-height: 1.7;
+    }
+
+    /* MASTERCLASS INFO BOX */
+    .av-info-box {
+        background: rgba(197, 160, 89, 0.05);
+        border-left: 4px solid #C5A059;
+        padding: 40px;
+        margin: 0 auto 80px auto;
+        max-width: 800px;
+        text-align: left;
+    }
+    
+    .av-info-box h3 {
+        color: #C5A059;
+        font-family: 'Playfair Display', serif;
+        font-size: 1.8rem;
+        margin-top: 0;
+    }
+    
+    .av-info-box ul {
+        list-style: none;
+        padding: 0;
+        color: #e0e0e0;
+        font-size: 1.1rem;
+        line-height: 2;
+    }
+    
+    .av-info-box ul li::before {
+        content: "■";
+        color: #C5A059;
+        font-size: 0.8em;
+        margin-right: 15px;
+        position: relative;
+        top: -2px;
+    }
+
+    /* FORMULÄR (LEAD CAPTURE) */
+    .av-form-container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 50px;
+        background: rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(197, 160, 89, 0.2);
+    }
+
+    .av-form-container h3 {
+        text-align: center;
+        color: #fff;
+        font-family: 'Playfair Display', serif;
+        margin-top: 0;
+        margin-bottom: 30px;
+        font-size: 2rem;
+    }
+
+    .av-input-group {
+        margin-bottom: 20px;
+    }
+
+    .av-input-group label {
+        display: block;
+        color: #b0b0b0;
+        margin-bottom: 8px;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .av-input-group input, .av-input-group select {
+        width: 100%;
+        padding: 15px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: #fff;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1rem;
+        box-sizing: border-box;
+        transition: border-color 0.3s;
+    }
+
+    .av-input-group input:focus, .av-input-group select:focus {
+        outline: none;
+        border-color: #C5A059;
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    .av-btn {
+        background-color: transparent;
+        color: #C5A059;
+        border: 2px solid #C5A059;
+        padding: 18px 50px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        cursor: pointer;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        display: block;
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+        margin-top: 30px;
+    }
+
+    .av-btn:hover {
+        background-color: #C5A059;
+        color: #030a10;
+        box-shadow: 0 0 30px rgba(197, 160, 89, 0.4);
+    }
+
+    /* FOOTER */
+    .av-footer-contact {
+        margin-top: 80px;
+        font-size: 0.95rem;
+        color: #999;
+        text-align: center;
+        line-height: 2;
+        padding-top: 40px;
+        border-top: 1px solid rgba(197, 160, 89, 0.2);
+    }
+    
+    .av-footer-contact strong {
+        color: #fff;
+        font-size: 1.1rem;
+        letter-spacing: 1px;
+    }
+
+    .av-footer-contact a {
+        color: #C5A059;
+        text-decoration: none;
+        transition: color 0.2s;
+        border-bottom: 1px dotted transparent;
+    }
+    
+    .av-footer-contact a:hover {
+        color: #ffffff;
+        border-bottom: 1px solid #C5A059;
+    }
+
+    @media (max-width: 768px) {
+        .av-headline { font-size: 2.5rem; }
+        .av-services-grid { grid-template-columns: 1fr; gap: 30px; }
+        .av-generic-container { padding: 40px 15px; }
+        .av-form-container { padding: 30px 20px; }
+    }
+</style>
+</head>
+<body>
+
+<section class="av-generic-container">
+    <div class="av-generic-inner">
+        
+       <div class="av-logo-center">
+    <a href="https://www.avertum.se" target="_blank" title="Gå till Avertum.se">
+        <img src="Logo.png" alt="Avertum Logo" class="av-logo-img"> 
+    </a>
+</div>
+
+        <span class="av-title-gold">Avertum Executive Masterclass</span>
+        <h2 class="av-headline">Behåller ni <span>era kunder</span> vid nästa revision?</h2>
+        
+        <div class="av-intro-text">
+            <p>SME-sektorn står inför det största skiftet i modern tid. De nya lagkraven (NIS2, DORA & EU AI Act) handlar inte längre om IT – det handlar om er överlevnad som leverantör. Avertum Group översätter byråkratin till en stenhård Action Plan som säkrar era affärer och eliminerar ledningens personliga straffansvar. På bara 1,5 dagar.</p>
+        </div>
+
+        <div class="av-services-grid">
+            <div class="av-card">
+                <h3>01. Era kunder rensar leden</h3>
+                <p>Enterprise-bolagen granskar just nu hela sin leverantörskedja. Kan ni inte svart på vitt bevisa er compliance, kommer de att byta ut er. Enligt lag har de inget val.</p>
+            </div>
+
+            <div class="av-card">
+                <h3>02. Försäkringsfällan</h3>
+                <p>Saknar ni den dokumenterade riskhantering som lagen kräver, hävdar försäkringsbolagen oaktsamhet. Blir ni hackade slutar er cyberförsäkring att gälla och ni tar hela notan själva.</p>
+            </div>
+
+            <div class="av-card">
+                <h3>03. Personligt Straffansvar</h3>
+                <p>Det är inte er IT-chef som bär ansvaret vid en incident. Enligt de nya EU-direktiven är det VD och styrelse som bär det personliga – och finansiella – straffansvaret.</p>
+            </div>
+
+            <div class="av-card">
+                <h3>04. AI-Hotet & Darknet</h3>
+                <p>Okontrollerad AI och fientliga AI-agenter söker dygnet runt efter oskyddade SME-bolag. Kostnadsbesparingar via skugg-AI leder rakt in i avtalsbrott och massiva sanktionsavgifter.</p>
+            </div>
+        </div>
+
+        <div class="av-info-box">
+            <h3>Säkra ledningen. Säkra avtalen.</h3>
+            <p>Att anställa en egen CISO kostar hundratusentals kronor. Vi ger er genvägen genom en stängd Masterclass exklusivt för VD och ledningsgrupp.</p>
+            <ul>
+                <li><strong>Investering:</strong> 50 000 SEK exkl. moms</li>
+                <li><strong>Skattefördel:</strong> 100 % avdragsgill som strategisk kompetensutveckling.</li>
+                <li><strong>Format:</strong> 1,5 dagar fysiskt på Gullbergs Strandgata (alt. interaktivt Webbinarium).</li>
+                <li><strong>Leverans:</strong> En komplett, färdig Action Plan för att möta kundernas krav.</li>
+            </ul>
+        </div>
+
+        <div class="av-form-container">
+            <h3>Ansök om en plats</h3>
+            <p style="text-align: center; color: #b0b0b0; margin-bottom: 30px;">Våra Masterclass-tillfällen är strikt begränsade för att garantera specifik rådgivning. Fyll i era uppgifter för att säkra en stol för Q2.</p>
+            
+            <form action="#" method="POST"> <div class="av-input-group">
+                    <label>Företagsnamn</label>
+                    <input type="text" name="company" required placeholder="T.ex. AB Svensk Industri">
+                </div>
+                <div class="av-input-group">
+                    <label>Namn (VD / Beslutsfattare)</label>
+                    <input type="text" name="name" required placeholder="För- och efternamn">
+                </div>
+                <div class="av-input-group">
+                    <label>E-postadress</label>
+                    <input type="email" name="email" required placeholder="vd@företaget.se">
+                </div>
+                <div class="av-input-group">
+                    <label>Telefonnummer</label>
+                    <input type="tel" name="phone" required placeholder="070-XXX XX XX">
+                </div>
+                <div class="av-input-group">
+                    <label>Föredraget Format</label>
+                    <select name="format">
+                        <option value="fysisk">Fysiskt (Gullbergs Strandgata, Göteborg)</option>
+                        <option value="webbinarium">Digitalt Webbinarium</option>
+                    </select>
+                </div>
+                <button type="submit" class="av-btn">Skicka Intresseanmälan</button>
+            </form>
+        </div>
+
+        <div class="av-footer-contact">
+            <p>
+                <strong>AVERTUM GROUP AB</strong><br>
+                Gullbergs Strandgata 36D, 411 04 Göteborg<br><br>
+                Webb: <a href="https://www.avertum.se" target="_blank">www.avertum.se</a><br>
+                E-post: <a href="mailto:info@avertum.se">info@avertum.se</a><br>
+            </p>
+        </div>
+
+    </div>
+</section>
+
+</body>
+</html>
