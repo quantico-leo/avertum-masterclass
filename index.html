@@ -7,6 +7,35 @@
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap');
 
+    /* --- Tvingar fram mörk bakgrund i PDF --- */
+    @media print {
+        body, .av-generic-container {
+            background-color: #030a10 !important;
+            color: #e0e0e0 !important;
+            -webkit-print-color-adjust: exact !important; 
+            print-color-adjust: exact !important;
+        }
+        
+        /* Säkerställer att gulddetaljerna förblir guld */
+        .av-title-gold, .av-headline span, .av-card h3, .av-btn, .av-footer-contact a {
+            color: #C5A059 !important;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        /* Ser till att kortens ramar syns */
+        .av-card {
+            border: 1px solid rgba(197, 160, 89, 0.15) !important;
+        }
+
+        /* Ser till att loggan (bilden) inte inverteras */
+        img {
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+    }
+
+    /* --- Vanlig design (skärm) --- */
     body {
         margin: 0;
         padding: 0;
@@ -332,7 +361,8 @@
             <h3>Ansök om en plats</h3>
             <p style="text-align: center; color: #b0b0b0; margin-bottom: 30px;">Våra Masterclass-tillfällen är strikt begränsade för att garantera specifik rådgivning. Fyll i era uppgifter för att säkra en stol för Q2.</p>
             
-            <form action="#" method="POST"> <div class="av-input-group">
+            <form action="#" method="POST"> 
+                <div class="av-input-group">
                     <label>Företagsnamn</label>
                     <input type="text" name="company" required placeholder="T.ex. AB Svensk Industri">
                 </div>
